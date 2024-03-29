@@ -167,15 +167,14 @@ app.post("/show/:id/review",isLogged,async(req,res,next)=>{
 })
 const intdb= async()=>{
     let newArr=data.data.map((obj)=>{
-        return ({...obj,owner:"65d6467054b6820d0f918c76"});
+        return ({...obj,owner:"66054d3a90115829de518ede"});
     })
     await model.deleteMany({});
     let listing=await model.insertMany(newArr);
     console.log(listing);
 }
-//intdb();
+intdb();
 app.use((err,req,res,next)=>{
     console.log(err);
     res.send("SOMETHING WENT ERROR");
 })
-
